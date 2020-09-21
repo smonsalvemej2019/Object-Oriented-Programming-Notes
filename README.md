@@ -394,7 +394,7 @@ int main() { //REMEMBER!!!!!! ALWAYS USE MAIN(){}
 
     //---------------------------Basic Classes and objects-------------------------------------------//
 
-#pragma region Basic Classes Code
+
 
 
 
@@ -443,11 +443,9 @@ int main() { //REMEMBER!!!!!! ALWAYS USE MAIN(){}
         << "imported?: " << wine.myBool << endl;
 
 
-#pragma endregion
-
     //-------------------------Methods---------------------------------------------//
 
-#pragma region Methods Code
+
 
 
 
@@ -468,11 +466,11 @@ int main() { //REMEMBER!!!!!! ALWAYS USE MAIN(){}
     Coffee bean;//object called bean
     bean.PriceMethod(2.55);//method call with a parameter
 
-#pragma endregion
+
 
     //-------------------------Constructors---------------------------------------------//
 
-#pragma region Constr- Code
+
 
     cout << "\n\n" << "CONSTRUCTORS" << "\n" << endl;
 
@@ -483,11 +481,10 @@ int main() { //REMEMBER!!!!!! ALWAYS USE MAIN(){}
     Kava black("Black", 7.00);//calls constructor
     Kava white("White", 7.00);//calls constructor
 
-#pragma endregion
+
 
     //-------------------------Access Specifier---------------------------------------------//
 
-#pragma region Acc- Speci- Code
 
 
 
@@ -502,7 +499,7 @@ int main() { //REMEMBER!!!!!! ALWAYS USE MAIN(){}
     cout <<"\n"<<"y:"<< ProtObj.y << endl;
     cout << "x: Displaying will create errors" << endl;
 
-#pragma endregion
+
 
     //---------------Encapsulation--------------------------------------------------------//
     
