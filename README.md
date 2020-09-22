@@ -1,6 +1,7 @@
 # Object-Oriented-Programming-Notes
 
 //  OOP-Notes
+
 //  This notes I took helped me understand OOP
 //  It includes some basic explanations of how some concepts work as well as some (not very good) examples.
 
@@ -26,6 +27,8 @@ public:      //access specifier: anything outside the class can access the attri
 };
 
 //---------------Basic Classes With Methods-------------------//
+
+
 class ClassWithMethod { 
 
 //a class with a basic method called ClassWithMethod
@@ -112,6 +115,8 @@ public:
 };
 
 //---------------Encapsulation--------------//
+
+
 //Encapsulation protects data from users by using privates attributes
 //encapsulation uses getters and setters
 //setters/mutators can defined and interact with the private attrs
@@ -161,6 +166,7 @@ float BetterKava::getter() {
 
 
  //---------------Inheritance--------------------------------------------------------//
+ 
  
  //We can pass attributes and methods from one class to another
  //Inheritance allow us to reuse attributes and methods
@@ -313,6 +319,7 @@ public:
 
 //---------------Inheritance With Access Specifiers--------------------------------------------------------//
 
+
 //Child classes can access private attributes of other classes
 //This is called the protected access specifier
 
@@ -381,6 +388,7 @@ DepartmentInfo::DepartmentInfo(string comN, string addi, string depn, int noOfEm
 }
 
 //---------------Polymorphism-------------------------------------------------------------------------//
+
 
 //Polymorphism means "many forms" and the concept is based around the use of inheretance to perform differen taks
 //The goal of polymorphism is to reuse code
