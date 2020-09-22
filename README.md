@@ -2,8 +2,7 @@
 
 //  OOP-Notes
 //  This notes I took helped me understand OOP
-//  It includes some basic explanations of how some concepts work
-//  as well as some (not very good) examples.
+//  It includes some basic explanations of how some concepts work as well as some (not very good) examples.
 
 #include <iostream>//basic library
 #include <string>//string library
@@ -11,8 +10,12 @@
 using namespace std; //BAD PRACTICE!!!!!!!!!!!!!!!!
 
 //---------------Basic Classes-------------------//
-class BasicClass { //basic class named BasicClass
-public://access specifier: anything outside the class can access the attributes of the class
+
+class BasicClass {
+
+//basic class named BasicClass
+
+public:      //access specifier: anything outside the class can access the attributes of the class
 
     //Class Attributes
 
@@ -23,7 +26,10 @@ public://access specifier: anything outside the class can access the attributes 
 };
 
 //---------------Basic Classes With Methods-------------------//
-class ClassWithMethod { //a class with a basic method called ClassWithMethod
+class ClassWithMethod { 
+
+//a class with a basic method called ClassWithMethod
+
 public:
     void aMethod() {//method deffintion
         //a method is a fiunction inside a class and can access variables inside the class
@@ -34,9 +40,9 @@ public:
 
 };
 
-//methods can also be defined outside the class the following way:
-// declare the function and its parameters indide the function
-// outside the function: (function type) className :: mthodName()
+// methods can also be defined outside the class the following way:
+// inside the class: declare the function and its inputs
+// outside the class: (function type) className :: mthodName()
 // the :: is used to define the scope of the function
 
 
@@ -45,7 +51,9 @@ public:
 //and a method definition outside the class
 
 class Coffee {
+
 public:
+
     void PriceMethod(float price);//declaration of Price Method
 };
 
@@ -60,7 +68,9 @@ void Coffee::PriceMethod(float price) { //deffinition of Price method
 //Consructors are special methods that are called when an object is created
 
 class Kava {
+
 public:
+
     string name = "n/a";
     float price = 0;
 
@@ -89,10 +99,13 @@ Kava::Kava(string kName, float kPrice) {//constructor definition
 //Protected: members can be accessed only by inherated classes
 
 class protecClass {
+
 private:
+
     int x;
 
 public:
+
     int y;
 
 
@@ -105,7 +118,9 @@ public:
 //getters display the information
 
 class BetterKava {
+
 private:
+
     double price;//default attr for price
     
 
@@ -118,7 +133,9 @@ public:
 
 };
 
-BetterKava::BetterKava() {//the constructor will always display the messeage and set dfault values to the attr
+BetterKava::BetterKava() {
+
+//the constructor will always display the messeage and set dfault values to the attr
 
     cout << "\n" << "Hello from a constructor!!! this is an improved kava class!" << endl;
 
@@ -135,20 +152,27 @@ void BetterKava::setter(double p, string s) {//using the getter() method we can 
 
 }
 
-float BetterKava::getter() {//setter allows to diplay the private attr from outside
+float BetterKava::getter() {
+
+//setter allows to diplay the private attr from outside
 
     return price;
 }
 
 
  //---------------Inheritance--------------------------------------------------------//
- //We can add attr and methods from one class to another
+ 
+ //We can pass attributes and methods from one class to another
  //Inheritance allow us to reuse attributes and methods
  //Child/Derived class: the class that is borrowing from other classes
  //Parent/Base class: The class that is borrowed from
 
-class Drinks {//Let drinks be our parent class
+class Drinks {
+
+//Let drinks be our parent class
+
 public:
+
     string Name;
     double Price;
     
@@ -158,14 +182,20 @@ public:
         Price = 0;
     }
 };
+
 //drinks is broad enough to be a parent
 //there can be different drink types: wines, beers, and coctails
 //let say we want to make a derived class from drinks just for beers
 //all the drived classes will use the name, price and the default constructor from drinks
 
-class Beer: public Drinks{//Beer is a derived class from Drinks
+class Beer: public Drinks{
+
+//Beer is a derived class from Drinks
+
 public:
-    string Brewery;//It wouldnt make sense to use brewery in the parent because only beers are made in breweries
+
+    string Brewery;//It wouldnt make sense to use brewery in the child because only beers are made in breweries
+    
     string Beerkind;//While kind can be broad too, Beerkind refers to IPA, Wheat Beer, Dark Lager, etc
     
     Beer();
@@ -204,7 +234,9 @@ void Beer::BeerDisplay(){//BeerDisplay method outputs the parent and child attr
 //A more ideal example would be having the following classes: Beer derived from alcoho, and alcohol be derived from Drinks
 
 class Cider:public Beer{
+
 public:
+
     string Region;//cider has the attributes of its parents and itself
     Cider();//it has its own constructor
     void CiderSetter(string n,double p, string brw, string brk, string reg);//its own setter that passes all the attr
@@ -236,11 +268,13 @@ void Cider::CiderDisplay(){
 }
 
 //We can also do multi-inheratence
-//instead of having one base class we can have two and have a combination of all of methods and attr
+//instead of having one base class we can have two and have a combination of all of methods and attributes
 //lets create a new class named alcohol
 
 class Alcohol{
+
 public:
+
     double alchLvl;
     Alcohol();
     void AlcoholSetLevel(double al);
@@ -278,21 +312,30 @@ public:
 
 
 //---------------Inheritance With Access Specifiers--------------------------------------------------------//
+
 //Child classes can access private attributes of other classes
 //This is called the protected access specifier
 
-class Company {//company is a class with protected attr
+class Company {
+
+//company is a class with protected attr
+
 public:
+
     string compName;
     string address;
     Company();
 protected:
+
     string depName;
     int noOfEmpl;//number of employees
     float earnings;
 };
 
-Company::Company(){//default constructor definition
+Company::Company(){
+
+//default constructor definition
+
     cout<<"\nHello from the Company parent class construct"<<endl;
     compName = "n/a";
     address = "n/a";
@@ -306,6 +349,7 @@ Company::Company(){//default constructor definition
 
 class DepartmentInfo: public Company{
 public:
+
     DepartmentInfo();//Default Constructor
     DepartmentInfo(string comN, string addi, string depn, int noOfEm, float earn);//constructor
     
@@ -337,35 +381,45 @@ DepartmentInfo::DepartmentInfo(string comN, string addi, string depn, int noOfEm
 }
 
 //---------------Polymorphism-------------------------------------------------------------------------//
+
 //Polymorphism means "many forms" and the concept is based around the use of inheretance to perform differen taks
 //The goal of polymorphism is to reuse code
 //lets make a new example
    
 class TechCompany{
+
 public:
+
     string name;
     string ceo;
     string description;
     TechCompany();
+    
 protected:
+
     double earnings;
 };
 TechCompany::TechCompany(){
+
     name="no info";
     ceo="no info";
     description="no info";
     earnings = 0;
+    
 }
 
 
 class SocialMedia: public TechCompany{
+
 public:
+
     int numbOfUser;
     SocialMedia();
     SocialMedia(string na, string ce, string des, double earn, int nouser);
 };
 
 SocialMedia::SocialMedia(){
+
     numbOfUser = 0;
     
     cout<<"\nName: "<<name<<endl<<"CEO: "<<ceo<<endl<<"Description: "<<endl
@@ -373,6 +427,7 @@ SocialMedia::SocialMedia(){
 }
 
 SocialMedia::SocialMedia(string na, string ce, string des, double earn, int nouser){
+
     name=na;
     ceo=ce;
     description=des;
@@ -388,7 +443,9 @@ SocialMedia::SocialMedia(string na, string ce, string des, double earn, int nous
 
 
 
-int main() { //REMEMBER!!!!!! ALWAYS USE MAIN(){}
+int main() { 
+
+//REMEMBER!!!!!! ALWAYS USE MAIN(){}
 
 
     //---------------------------Basic Classes and objects-------------------------------------------//
