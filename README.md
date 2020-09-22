@@ -287,9 +287,12 @@ public:
 };
 
 Alcohol::Alcohol(){
+
     cout << "\nHello from the alcohol class"<<endl;
+    
 }
 void Alcohol::AlcoholSetLevel(double al){
+
     alchLvl = al;
 }
 
@@ -332,6 +335,7 @@ public:
     string compName;
     string address;
     Company();
+    
 protected:
 
     string depName;
