@@ -2,7 +2,7 @@
 
 // This notes I took helped me understand OOP // It includes some basic explanations of how some concepts work as well as some (not very good) examples.
 
-#include //basic library #include //string library #include //I/O library using namespace std; //BAD PRACTICE!!!!!!!!!!!!!!!!
+using namespace std;
 
 //---------------Basic Classes-------------------//
 
